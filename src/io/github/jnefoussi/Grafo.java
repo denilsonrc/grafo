@@ -91,7 +91,7 @@ public class Grafo {
      * Insere a aresta entre os nós do grafo O valor dentro da posição x,y da
      * matriz é o peso da aresta A posição x,y são os nós interligado.
      */
-    public void insereAresta(int A, int B, int peso, ListaRotas lista) throws Exception {
+    public void insereAresta(int A, int B, int peso, ListaVertices lista) throws Exception {
         try {
             if (A < 0 || B < 0
                     || A > getNUMERO_DE_NODOS()
@@ -103,7 +103,7 @@ public class Grafo {
             }
 
             matrizDePesos[A][B] = peso;
-            Rota r = new Rota(A, B, peso);
+            Vertice r = new Vertice(A, B, peso);
 //            lista.adiciona(r);
             lista.adicionaFim(r);
         } catch (Exception ex) {

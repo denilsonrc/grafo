@@ -12,7 +12,7 @@ public class Main {
         try {
 
             Grafo grafo = new Grafo(5);
-            ListaRotas lr = new ListaRotas();
+            ListaVertices lr = new ListaVertices();
 
             //Arestas definidas em aula
             grafo.insereAresta(0, 1, 2, lr); //A-B Peso 2

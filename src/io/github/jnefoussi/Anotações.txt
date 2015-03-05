@@ -1,0 +1,15 @@
+Comentários feitos em aula pelo prof.
+
+gera(List Rota, grafo no_vertices){
+    if (Rota == null) {
+        adiciona primeiro_no__na_lista
+    }
+    List nospossiveis = getLista_ultimo_elemento_adicionado();
+    
+    for (i=0; i<tamanhoNosPossiveis;i++){
+    if (nodaposicao inlist listaRota){
+        Adiciona nó i inlist rota;
+        rota = geraRota(rota, no_vertices);
+    }
+    return rota;
+    }

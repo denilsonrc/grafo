@@ -4,7 +4,7 @@ package io.github.jnefoussi;
  *
  * @author roben
  */
-public class ListaRotas {
+public class ListaVertices {
 
     //Atributos
     private Celula primeira;
@@ -12,11 +12,11 @@ public class ListaRotas {
     private int quantidade;
 
     //Construtor sem Objeto
-    public ListaRotas() {
+    public ListaVertices() {
     }
 
     //Construtor recebendo Objeto
-    public ListaRotas(Object elementoPassado) {
+    public ListaVertices(Object elementoPassado) {
         Celula novo = new Celula(elementoPassado);
         this.primeira = novo;
         this.ultima = novo;
@@ -165,12 +165,12 @@ public class ListaRotas {
         this.ultima = fim;
     }
 
-    public void imprimeLista(ListaRotas lr) {
+    public void imprimeLista(ListaVertices lr) {
         System.out.println("\n   Rotas");
         System.out.println("SRC DST SZ");
         for (int i = 0; i < lr.tamanho(); i++) {
             Celula pegada = (Celula) lr.pega(i);
-            Rota ax = (Rota) pegada.getElemento();
+            Vertice ax = (Vertice) pegada.getElemento();
 
             System.out.println(" " + ax.getOrigem() + "   " + ax.getDestino() + "   " + ax.getPeso());
 
@@ -178,12 +178,13 @@ public class ListaRotas {
         System.out.println("\nTamanho da lista de Rotas: " + lr.tamanho());
     }
 
-    public int calculaRota(ListaRotas lr, int inicioRota) {
+    public int calculaRota(ListaVertices lr, int inicioRota) {
+        //Desconsiderar esse método para calcular a rota
         int tamanhoRota = 0;
         
         for (int i = 0; i < lr.tamanho(); i++) {
             Celula pegada = (Celula) lr.pega(i);
-            Rota ax = (Rota) pegada.getElemento(); //Estrutura da Rota SRC DST SZ
+            Vertice ax = (Vertice) pegada.getElemento(); //Estrutura da Rota SRC DST SZ
 
             if (ax.getOrigem() == inicioRota) {
                
@@ -198,4 +199,8 @@ public class ListaRotas {
         }
         return tamanhoRota;
     }
-}
+    
+        
+    }
+    
+ 
