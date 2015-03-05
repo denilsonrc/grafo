@@ -77,6 +77,7 @@ public class Grafo {
 
         int tamanho = getNUMERO_DE_NODOS();
 
+        System.out.println("\nMatriz do grafo");
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++) {
                 System.out.printf("[" + matriz[i][j] + "] ");
@@ -90,7 +91,7 @@ public class Grafo {
      * Insere a aresta entre os nós do grafo O valor dentro da posição x,y da
      * matriz é o peso da aresta A posição x,y são os nós interligado.
      */
-    public void insereAresta(int A, int B, int peso) throws Exception {
+    public void insereAresta(int A, int B, int peso, ListaRotas lista) throws Exception {
         try {
             if (A < 0 || B < 0
                     || A > getNUMERO_DE_NODOS()
@@ -102,6 +103,9 @@ public class Grafo {
             }
 
             matrizDePesos[A][B] = peso;
+            Rota r = new Rota(A, B, peso);
+//            lista.adiciona(r);
+            lista.adicionaFim(r);
         } catch (Exception ex) {
             if (ex.getMessage() == null) {
                 System.out.println("Ocorreu um erro de " + ex + " insertArc");
